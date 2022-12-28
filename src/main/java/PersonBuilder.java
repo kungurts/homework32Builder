@@ -28,13 +28,16 @@ public class PersonBuilder {
 
     public Person build() {
         if (name == null || surname == null) {
+            String msgName = null;
+            String msgSurname = null;
+
             if (name == null) {
-                name = "вы не ввели имя";
+                msgName = "вы не ввели имя";
             }
             if (surname == null) {
-                surname = "вы не ввели фамилию";
+                msgSurname = "вы не ввели фамилию";
             }
-            throw new IllegalStateException("вы не заполнили обязательные данные - имя или фамилию. Ввели имя: " + name + ", фамилия: " + surname);
+            throw new IllegalStateException("вы не заполнили обязательные данные - имя или фамилию. Ввели имя: " + msgName + ", фамилия: " + msgSurname);
         }
         if (age < 0 || age > 150) {
             throw new IllegalArgumentException("проверьте, правильно ли вы указали возраст. Вам действительно " + age + " лет?");

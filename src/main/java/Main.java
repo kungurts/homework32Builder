@@ -35,5 +35,16 @@ public class Main {
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
+
+        try {
+            Person cat = new PersonBuilder()
+                    .setName("Charlie")
+                    .setAge(3)
+                    .setAddress("Sydney")
+                    .build();
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
+
     }
 }
